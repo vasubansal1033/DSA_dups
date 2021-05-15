@@ -1,0 +1,152 @@
+http://en.wikipedia.org/wiki/Memory_management
+http://en.wikipedia.org/wiki/Garbage_collection_(computer_science)
+http://www.geeksforgeeks.org/write-a-function-to-reverse-the-nodes-of-a-linked-list/  do read the recursive part without using any other variable apart from headref.... to remember the last line's logic ... *headref=rest== *&rest(prev. call) = rest(present call).... therefore rest(prev. call)=rest(present call)....Also keep in mind that all the 3 variables, first last and headref are to vanish after call....
+
+Keep this in mind....when you have ,moduloed no. eg. sum and you divide by 2 .... Never user simple sum/2 rather use inverse modular arithmetic ... a*b^p-2 where p is a prime....
+http://stackoverflow.com/questions/69112/what-is-a-symbol-table
+_savez_temps with gcc allows to store all intermediate files
+nm [object file] reveals the symbol table of an object file
+http://programmers.stackexchange.com/questions/215065/can-anyone-explain-representation-of-float-in-memory
+
+http://stackoverflow.com/questions/1957099/how-do-free-and-malloc-work-in-c explains why free does not require size
+
+READ WHEN YOU HAVE TIME:http://stackoverflow.com/questions/1433204/how-do-i-use-extern-to-share-variables-between-source-files-in-c/1433387#1433387
+
+Linking: Read these for clear understanding
+http://publications.gbdirect.co.uk/c_book/chapter4/linkage.html
+http://en.cppreference.com/w/cpp/language/storage_duration#Linkage
+http://publications.gbdirect.co.uk/c_book/chapter8/declarations_and_definitions.html
+KEY POINT-The positioning of a declaration, the storage class specifiers used (or their defaults) and, in some cases, preceding declarations of the same name, can all affect the linkage of a name, although fortunately not its scope or duration. We will investigate the easier items first.
+---Duration, Scope and linkage associated with each storage class
+THINGS TO REMEMBER:
+There can only be one declaration... extern and static not in parameters...
+EXTERN
+Its a request and not a command as compared to static, which just indicates that in case the variable is not used in this translation unit, just find it in some other files compiled together... However if the variable is already present in the file as static... Then error.. and if normally defined, request is overriden.
+	EXTERNAL DECLARATION
+1.If no definition before, its paves way for extern linkage from the place it is declared till the end of file
+2. In functions where variables with no linkage or static variables are present....\
+SUMMARY::::
+Storage Class Specifier	Function or Data Object	Linkage	Duration
+static	either	internal	static
+extern	either	probably external	static
+none	function	probably external	static
+none	data object	external	static
+Table 8.1. External declarations (outside a function)
+The table above omits the register and auto storage class specifiers because they are not permitted in file-scope (external) declarations.
+Storage Class Specifier	Function or Data Object	Linkage	Duration
+register	data object only	none	automatic
+auto	data object only	none	automatic
+static	data object only	none	static
+extern	either	probably external	static
+none	data object	none	automatic
+none	function	probably external	static
+
+
+TENTATIVE DEFINITIONS:   different from actual defintions...
+(Only for data members).... Functions only have declarations...
+The definitions of arrays, variables without initializer are called tentative definitions.... e.g. int arr[]; (allowed) int a; #include<stdio.h>
+
+int a[];
+void test()
+{
+int i;
+
+    printf("%d\n",a[2]);
+}
+int a[]={1,2,3};
+int main()
+{
+  printf("%d\n",a[1]);
+test();
+  }
+Works just fine and gives 2,3 although defintion of second after the test function... Actually when such defintions are there, the compiler first searches for all some initialized defintion of this ... if found then this defintion is replaced by that intiialized defintion else given int a=0; or a assumed to be one element... only for int a and int a[];
+THIS IS ALSO valid
+#include<stdio.h>
+int a[5];
+void test()
+{
+int i;
+
+    printf("%d\n",a[2]);
+}
+int a[]={1,2,3};
+int main()
+{
+  printf("%d\n",a[1]);
+test();
+  }
+http://stackoverflow.com/questions/5337370/redefinition-allowed-in-c-but-not-in-c?lq=1
+THIS IS NOT A FEATURE OF C++ BUT ONLY C...
+
+
+
+  topics to be watched  :::
+2. Memory management and garbage collection
+3. building projects and modules
+4. make file
+5. code optimization in c (from c in depth)
+6. assembly interaction	(from c in depth)
+8. bits (bit operator functions)
+
+
+
+##SHORTEST WEIGHT TREE WITH SHORTEST PATH FROM A NODE N, in this case modified dijkstra's will be applied.... Remember that taking complex structures and repeating memory is not that cumbersome as compared to writing complex codes... In dijkstra's we see that from an active node to other nodes, the distances that relax the orignal path... in such a case the element of the queue must not just contain the distance and element but also which edge it is associated with.... In case paths through a number of edges gives equal distance, then we need to choose the one with the minimum edge weight so pair<int(distance),weight of egde> pair<element connected, edge no.>...... Complexity in element selection for container can often reduce programmer's side complexity....
+
+
+http://askubuntu.com/questions/221835/installing-ubuntu-on-a-pre-installed-windows-8-64-bit-system-uefi-supported
+
+When 3d array= range 200
+when 2d 1000
+when 1d 10^6
+In prime factorization count, best way is via hashing... Remember sqrt n is for prime checking or checking if factor or not... but if you wish to find the multiples of all prime nos. upto n,, take care of the prime nos. > sqrt n.... Also division by a prime factor is not a very costly method but traversing is...(Div. 304 D)
+
+Remember that when there is a chance of division, DSU does not work...
+
+Functions storage: 
+https://stackoverflow.com/questions/24504913/where-are-functions-of-an-object-stored-in-memory
+
+Constructors and destructors in gcc:::http://phoxis.org/2011/04/27/c-language-constructors-and-destructors-with-gcc/
+ Although their is no such well defined concept of constructor and destructor operation to work in c like where the scope of a function ends...yet the gcc defines constructor attribute... Actually before calling main(user defined) a number of other functions are called for initializing memory, creating execution env. etc... After these any function of your choice may be executed before main.... using __attribute__((constructor/destructor(priority no.))) along with declaration or definition...priority no. is to define the order of occurence ... 1-100 are reserved therefore used above... nore than 1 can be stored.... give diff. priority.... constructor and destructor are like start and end functions... nothing else....
+
+SIZE OF
+sizeof(void) gives 1 in c but error in c++.....http://stackoverflow.com/questions/10551822/why-does-sizeofvoid-1 It does give 1 with both the function name and void give 1... this has been done for void pointer subtration to yield as per 1...and funct for function pointers....
+1
+Remember that size of is an operator and not a function or a macro... so it should have been defined during preprocessing however it is not because size of finds the total size as per datatype ... now size datatypes are not defined... so not defined during pre.. also in c++, this is an overloaded operator therefore it gives 1 with char constants while in c, all are implicitly converted to int and sotred...http://en.wikipedia.org/wiki/Sizeof %z for sizeof(unsigned long interal type), sizeof is compile time evaluated operator
+
+int a[] is allowed in structs at the end as flexible arrays... however the struct size does not take it to consideration... even though a variable defining it as it constitiuent may arrive... sizeof of that variable not allowed.. as not during compiletime.
+Only exception is VlA when it has to work during runtime and in that case, expressions are evaluated... no declarations can be written, since before linking,,, no incomplete data types can have sizeof value... rather it will give error...
+Anonymous structs with no tag and no variable not allowed in c++...
+VLA
+vlas can only be automatic variables that is not allowed in global or static locals because their memory is allocated during compile time...Although in c++, n=10; then b=n is allowed, yet arrays should be constant integral value...and it is discarded... also in structs written outside, this is not allowed...
+vla's in c and c++ are automatic variables.. vla is only allowed inside functions... 
+Memory is allocated in stack so constructed and destructed inside function only...just like all other automatic variables.Plus these cannot be intiaialized...
+\r is interpreted by the terminal screen and not the buffer....buffer flushing has nothing to do with the escape characters...
+CARRIAGE RETURN :  '\r' character passes the control or cursor to the start of the terminal screen of stdout.... although keeping hte previous buffer... hence it helps in overwriting... when you write aretu\ram it forms ametu... putting next line at the end in a way flushes this buffer and allows command prompt at the next line therefore the change is seen... however when you write hasi\rs and then prog. ends... the cursor wirte hasi ->sasi cursor still at 2 and since the shell also writes the command prompt onto the buffer and then flushes... we get only h followed by shell prompt... however if the previous string was longer than the prompt the string would still be folowed after the prompt... However the cursor of the terminal is just after shell prompt therefore you would see the string being overwritten.
+'\f' brings the cursor on the next line just right aligned to the end of previous text.... eg. hari\f sa= hari
+													      sa
+wise usage of usleep(time in microseconds) <unistd.h> along with fflush(stdout) to print out the present buffer would give illusion of motion screen....http://stackoverflow.com/questions/7372918/whats-the-use-of-r-escape-sequence 
+
+Why no unsigned floating.... one can read stack overflow answer...
+
+https://lwn.net/Articles/531148/ about memory Vimp
+http://cs-fundamentals.com/c-programming/static-and-dynamic-linking-in-c.php about linking
+
+SEQUENCE POINTS :http://www.angelikalanger.com/Articles/VSJ/SequencePoints/SequencePoints.html
+When you need to find the number of all possible addition combinations of a particular number n, take n places and use multinomial theorem approach....n+r-1Cr...
+SUFFIX TREE: for sub string related operation in O(n^2) where n is length of string... pattern finding substring count, etc. when talking of substrings so keep suffix tree in mind....espically for pattern matching... while when related to nos and modulo required use dp of n*mod ... Use compressed trie instead of normal trie...see ideone solution june 15 for this... suffix tree via compresed trie... also no. of equal substrings can never exceed n...
+TO DO Ukkonen suffix tree in linear time
+
+Tower of Hanoi-> just create an example for odd and even and check... remember forula- (for iterative)s->d s->a d->a (d and a interchaged in even) in recursive from->aux (print from->to) aux->to 
+An important result:
+1. If product of 2 exclusive subarrays has to be made max such that you can flip elements in same row... this can be done by greedy sort as per diff and then try to minimize the diff..
+2. A no. divisible by 9 gives remainder x also has a unique propety to have remainder as x when sum of digits used..in this way all no. with same digit sum will have same remainder....
+To find diameter of a tree from any node, first use bfs to find deepest node from ny point... then  from that deepest node, again use dfs to find diameter...To deal with diameter on unrooted trees http://discuss.codechef.com/questions/71403/maxdist-editorial	
+
+SCAN SET
+printf also gives a format output for regular expressions using %[expression]- 
+if characters are written then it takes uptil these characters present... space and enter overshadowed, 
+if a-z written then it is range
+^ at the start denotes that uptil you do not find these characters...
+
+-
+

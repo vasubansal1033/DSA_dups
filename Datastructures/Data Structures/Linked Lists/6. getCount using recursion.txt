@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+struct Node{
+	int data;
+	Node* next;
+};
+Node* createNode(int data){
+	Node* temp = new Node();
+	temp->data = data;
+	temp->next = NULL;
+	
+	return temp;
+}
+void print(Node* head){
+	while(head!=NULL){
+		cout<<head->data<<" ";
+		head = head->next;
+	}
+	cout<<"\n";
+}
+void push(Node** head_ref, int data){
+	Node* temp = createNode(data);
+	temp->next = *head_ref;
+	*head_ref = temp;
+}
+int getCount(Node* head){
+	if(head==NULL){
+		return 0;
+	}
+	return 1+getCount(head->next);
+}
+int main() {
+	// your code goes here
+	Node* head = createNode(10);
+	push(&head, 2);
+	push(&head, 9);
+	print(head);
+	cout<<getCount(head);
+	return 0;
+}

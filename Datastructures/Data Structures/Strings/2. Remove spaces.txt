@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+char* removeSpace(char* str){
+	int i=0, j=0;
+	while(str[i]){
+		if(str[i]!=' '){
+			str[j] = str[i];
+			j++;
+		}
+		i++;
+	}
+	str[j] = '\0';
+	return str;
+}
+int main() {
+	// your code goes here
+	char str1[] = "ge   e k s  ";
+	char str2[] = "  g e e k    s ";
+	cout<< removeSpace(str1)<<"\n";
+	cout<< removeSpace(str2)<<"\n";
+	return 0;
+}

@@ -1,0 +1,3 @@
+https://www.hackerearth.com/practice/notes/bit-manipulation/
+
+int k = n&(~(n-1)) -> k will have only the rightmost bit that was set in n

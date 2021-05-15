@@ -1,0 +1,75 @@
+#include <iostream>
+using namespace std;
+
+struct Node{
+	int data;
+	Node* next;
+};
+Node* createNode(int data){
+	Node* temp = new Node();
+	temp->data = data;
+	temp->next = NULL;
+	
+	return temp;
+}
+void print(Node* head){
+	while(head!=NULL){
+		cout<<head->data<<" ";
+		head = head->next;
+	}
+	cout<<"\n";
+}
+void push(Node** head_ref, int data){
+	Node* temp = createNode(data);
+	temp->next = *head_ref;
+	*head_ref = temp;
+}
+
+void reverseIterative(Node** head_ref){
+
+	Node* prev = NULL;
+	Node* current = *head_ref;
+	Node* next = NULL;
+	
+	while(current!=NULL){
+		next = current->next;
+		current->next = prev;
+		
+		prev = current;
+		current = next;
+	}
+	
+	*head_ref = prev;
+	
+	
+}
+
+Node* reverseRecursive(Node* head_ref){
+	if((head_ref)==NULL||(head_ref)->next==NULL){
+		return head_ref;
+	}
+	Node* head_ = reverseRecursive(((head_ref)->next));
+	(head_ref)->next->next = (head_ref);
+	(head_ref)->next = NULL;
+	
+	return head_;
+}
+
+int main() {
+	// your code goes here
+	Node* head = createNode(10);
+	push(&head, 2);
+	push(&head, 9);
+	push(&head, 10);
+	push(&head,11);
+	push(&head, 19);
+	print(head);
+	
+	reverseIterative(&head);
+	print(head);
+	head = reverseRecursive(head);
+	print(head);
+	
+	
+	return 0;
+}

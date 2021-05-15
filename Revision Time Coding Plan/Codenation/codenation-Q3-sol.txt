@@ -1,0 +1,162 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define ld long double
+#define f first
+#define s second
+#define pb push_back
+
+
+ 
+using namespace std;
+
+struct item{
+    ll val;
+};   
+
+struct segtree{
+
+
+    int size;
+
+    vector<item> values;
+
+
+    item NEUTRAL_E = {2147483647};    // Neutral Element is Element whose AND with a number gives same number 2^31-1
+
+    item merge(item a,item b)
+    {
+        return {a.val & b.val};
+    }
+
+    item single(int a)
+    {
+        return  {a};
+    }
+
+    void init(int n)
+    {
+        size = 1;
+        while(size < n)
+        {
+            size *= 2;
+        }
+        values.resize(4*size,NEUTRAL_E);
+    }
+    
+    void set(int i,int v,int x,int lx,int rx)
+    {
+        if(rx - lx == 1)
+        {
+            values[x] = single(v);
+            return;
+        }
+        int m = (lx + rx)/2;
+        if(i < m)
+        {
+            set(i,v,2*x + 1,lx,m);
+        }
+        else
+        {
+            set(i,v,2*x + 2,m,rx);
+        }
+        values[x] = merge(values[2*x + 1],values[2*x + 2]);
+
+    }
+
+    void set(int i,int v)
+    {
+        set(i,v,0,0,size);
+    }
+    void print(item a)
+    {
+        cout<<a.val<<endl;
+    }
+    item calc(int l,int r,int x,int lx,int rx)  // Calculating AND of a range
+    {
+        if(lx >= r || l >= rx)
+        {
+            return NEUTRAL_E;
+            //print(NEUTRAL_E);
+        }
+        if(lx >=l && rx <=r)
+        {
+            return values[x];
+            //print(values[x]);
+        }
+        int m = (lx+rx)/2;
+        auto s1 = calc(l,r,2*x+2,m,rx);
+        auto s2 = calc(l,r,2*x+1,lx,m);
+        return merge(s2,s1);
+    }
+
+    item calc(int l,int r)
+    {
+        return calc(l,r,0,0,size);
+    }
+    
+    void print()
+    {
+        for(int i = 0;i<values.size();i++)
+            cout<<values[i].val<<endl;
+    }
+
+};
+
+vector<int> andQueries(vector<int> numbers,vector<vector<int>> queries)
+{
+    segtree st;
+    st.init(numbers.size());
+    vector<int> ans1;
+    for(int i = 0;i<numbers.size();i++)
+    {
+        st.set(i,numbers[i]);
+    }
+    for(int i = 0;i<queries.size();i++)
+    {
+        int l,r,s,t;
+        l = queries[i][0];
+        r = queries[i][1];
+        s = queries[i][2];
+        t = queries[i][3];
+        l--; // Since it is One based Indexing
+        int p = 0;
+        for(int i = l;i<=r-s;i++)
+        {
+            auto ans = st.calc(i,i+s);
+            //cout<<i<<" "<<i+s<<" "<<ans.val;
+            if(ans.val >= t)
+                p++;
+        }
+        ans1.push_back(p);
+    }
+    return ans1;
+}
+int main()
+{
+    int n;
+    cin>>n;
+    segtree st;
+    st.init(n);
+    vector<int> numbers(n);
+    for(int i = 0;i<n;i++)
+    {
+        cin>>numbers[i];
+    }
+   
+    int m,x;
+    cin>>m>>x;
+    vector<vector<int>> queries(m,vector<int>(x));
+    for(int i = 0;i<m;i++)
+    {
+        for(int j = 0;j<x;j++)
+        {
+            cin>>queries[i][j];
+        }
+    }
+    vector<int> ans1 = andQueries(numbers,queries);
+    for(int i = 0;i<ans1.size();i++)
+        cout<<ans1[i]<<"\n";
+    
+
+    return 0;
+}

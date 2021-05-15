@@ -1,0 +1,61 @@
+#include <iostream>
+using namespace std;
+
+struct Node{
+	int data;
+	Node* next;
+};
+Node* createNode(int data){
+	Node* temp = new Node();
+	temp->data = data;
+	temp->next = NULL;
+	
+	return temp;
+}
+void print(Node* head){
+	while(head!=NULL){
+		cout<<head->data<<" ";
+		head = head->next;
+	}
+	cout<<"\n";
+}
+void push(Node** head_ref, int data){
+	Node* temp = createNode(data);
+	temp->next = *head_ref;
+	*head_ref = temp;
+}
+int getCycleLength(Node* head){
+	Node* slow = head;
+	Node* fast = head;
+	
+	while(slow!=NULL && fast!=NULL && fast->next!=NULL){
+		slow = slow->next;
+		fast = fast->next->next;
+		int c;
+		if(slow==fast){
+			c=1;
+			Node* ptr = slow;
+			while(ptr->next!=slow){
+				c++;
+				ptr = ptr->next;
+			}
+			return c;
+		}
+		
+	}
+	return 0;
+}
+int main() {
+	// your code goes here
+	Node* head = createNode(10);
+	push(&head, 2);
+	push(&head, 9);
+	push(&head, 10);
+	push(&head,11);
+	push(&head, 19);
+	head->next->next->next->next->next->next = head->next->next;
+	cout<<getCycleLength(head);
+	
+	
+	return 0;
+}

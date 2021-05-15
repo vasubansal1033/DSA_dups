@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+struct Node{
+	int data;
+	Node* link;
+};
+Node* createNode(int data){
+	Node* temp = new Node();
+	temp->data = data;
+	temp->link = NULL;
+	
+	return temp;
+}
+
+int main() {
+	// your code goes here
+	Node* A = new Node();
+	A = createNode(2);
+	
+	Node* temp = new Node();
+	temp = createNode(4);
+	A->link = temp;
+	
+	temp = createNode(9);
+	A->link->link = temp;
+	
+	temp = createNode(13);
+	A->link->link->link = temp;
+	
+	temp = A;
+	while(temp!=NULL){
+		cout<<temp->data<<" ";
+		temp = temp->link;
+	}
+	
+	
+	return 0;
+}

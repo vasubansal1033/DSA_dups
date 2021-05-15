@@ -1,0 +1,21 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+	string str1 = "vasu bansal rocks";
+	string str2 = "vasu bansal is very cool";
+	
+	char array[80];
+	// copy("char array in which substring is to be copied", len, starting position)
+	str1.copy(array, 13, 2);
+	cout<< array<<endl;
+	
+	cout<<"First string : "<<str1<<endl;
+	cout<<"Second string : "<<str2<<endl;
+	str1.swap(str2);
+	cout<<"First string : "<<str1<<endl;
+	cout<<"Second string : "<<str2<<endl;
+	
+	return 0;
+}

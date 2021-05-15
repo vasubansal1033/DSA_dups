@@ -1,0 +1,61 @@
+#include <iostream>
+using namespace std;
+
+struct Node{
+	int data;
+	Node* next;
+};
+Node* createNode(int data){
+	Node* temp = new Node();
+	temp->data = data;
+	temp->next = NULL;
+	
+	return temp;
+}
+void push(Node** head_ref, int data){
+	Node* temp = createNode(data);
+	temp->next = *head_ref;
+	*head_ref = temp;
+}
+void print(Node* head){
+	while(head!=NULL){
+		cout<<head->data<<" ";
+		head = head->next;
+	}
+	cout<<"\n";
+}
+
+void deleteByIndex(Node** head_ref, int i){
+	int c=0;
+	Node* temp = *head_ref;
+	if(i==0){
+		*head_ref = (*head_ref)->next;
+		free(temp);
+		return;
+	}
+	while(c<i-1 && temp!=NULL){
+		temp = temp->next;
+		c++;
+	}
+	if(temp==NULL || temp->next==NULL){
+		cout<<"Given index is out of range";
+		return;
+	}
+	
+	Node* t = temp->next->next;
+	free(temp->next);
+	temp->next = t;
+	return;
+	
+}
+int main() {
+	// your code goes here
+	Node* head = createNode(10);
+	push(&head, 99);
+	push(&head, 123);
+	push(&head, 12);
+	print(head);
+	deleteByIndex(&head, 3);
+	print(head);
+	return 0;
+}

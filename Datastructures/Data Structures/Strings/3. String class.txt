@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+	// your code goes here
+	string str;
+	
+	getline(cin, str);
+	cout<<"The initial string is : "<<str<<endl;
+	
+	str.resize(13);
+	cout<<"The string after resize operation is : "<<str<<endl;
+	
+	str.push_back('s');
+	cout<<"String after push back operation is : "<<str<<endl;
+	
+	str.pop_back();
+	cout<<"String after pop_back operation is : "<<str<<endl;
+	
+	cout<<"The capacity of the string is space allocated : "<<str.capacity()<<endl;
+	cout<<"The length of the string is : "<<str.length()<<endl;
+	str.shrink_to_fit();
+	cout<<"The new capacity after shrink_to_fit() is : "<<str.capacity()<<endl;
+	
+	std::string::iterator it;
+	std::string::reverse_iterator it1;
+	for(it = str.begin();it!=str.end();it++){
+		cout<<*it;
+	}
+	cout<<"\n";
+	for(it1 = str.rbegin();it1!=str.rend();it1++){
+		cout<<*it1;
+	}
+	cout<<"\n";
+	
+	
+	return 0;
+}

@@ -1,0 +1,26 @@
+#include <iostream>
+#include <stack>
+using namespace std;
+
+void showStack(stack<int> s){
+	while(!s.empty()){
+		cout<<s.top()<<" ";
+		s.pop();
+	}
+	cout<<"\n";
+}
+int main() {
+	// your code goes here
+	stack<int> s;
+	s.push(10);
+	s.push(20);
+	s.push(30);
+	s.push(40);
+	showStack(s); // prints in reverse order as that is the order ini which we access elements
+	cout<<s.top()<<"\n";
+	s.pop();
+	cout<<s.size();
+	
+	
+	return 0;
+}

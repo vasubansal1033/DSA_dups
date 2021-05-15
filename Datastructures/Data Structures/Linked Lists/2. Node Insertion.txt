@@ -1,0 +1,56 @@
+#include <iostream>
+using namespace std;
+
+// https://stackoverflow.com/questions/4986341/where-should-i-prefer-pass-by-reference-or-pass-by-value
+
+struct Node{
+	int data;
+	Node* link;
+};
+Node* createNode(int data){
+	Node* temp = new Node();
+	temp->data = data;
+	temp->link = NULL;
+	
+	return temp;
+}
+void print(Node* head){
+	Node* temp = head;
+	while(temp!=NULL){
+		cout<<temp->data<<" ";
+		temp = temp->link;
+	}
+}
+void push(Node** head_ref, int data){
+	Node* temp = createNode(data);
+	temp->link = *head_ref;
+	*head_ref = temp;
+}
+void insertAfter(Node* prev_node, int data){
+	if(prev_node == NULL){
+		cout<<"Previous node cannot be null";
+		return;
+	}
+	Node* temp = createNode(data);
+	temp->link = prev_node->link;
+	prev_node->link = temp;
+}
+void insertAtEnd(Node** head_ref, int data){
+	
+	Node* temp = createNode(data);
+	Node* last = *head_ref;
+	while(last->link!=NULL){
+		last = last->link;
+	}
+	last->link = temp;
+	
+}
+int main() {
+	// your code goes here
+	Node* head = createNode(2);
+	push(&head, 4);
+	insertAfter(head,8);
+	insertAtEnd(&head, 10);
+	print(head);
+	return 0;
+}

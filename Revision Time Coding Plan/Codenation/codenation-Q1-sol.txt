@@ -1,0 +1,29 @@
+string stringReduction(int k, string s){
+    if(s.length() <= k)
+        return "";
+    
+    int i = 0, n = s.length();
+    
+    stack<char> st;
+
+    while(i < n){
+        while(!st.empty() && k && st.top() < s[i]){
+            st.pop();
+            k--;
+        }
+        st.push(s[i]);
+        i++;
+    }
+
+    while(k--) st.pop();
+
+    string ans = "";
+
+    while(!st.empty()){
+        ans += st.top();
+        st.pop();
+    }
+    
+    reverse(ans.begin(), ans.end());
+    return ans;
+}

@@ -1,0 +1,135 @@
+https://ailearnerhub.com/2020/07/04/data-scientist-interview-experience/
+https://ailearnerhub.com/2020/08/02/data-scientist-interview-experience-startup-series/
+https://ailearnerhub.com/2020/09/06/data-scientist-interview-experience-3/
+https://ailearnerhub.com/2020/05/23/data-science-quiz-i/
+https://ailearnerhub.com/2020/07/18/machine-learning-with-python-quiz-1/
+https://ailearnerhub.com/2020/08/01/data-science-quiz-ii/
+https://ailearnerhub.com/2020/05/05/video-1/
+https://ailearnerhub.com/2020/05/06/what-is-gradient-descent/
+https://ailearnerhub.com/2020/05/07/derivative-for-gradient-descent/
+https://ailearnerhub.com/2020/05/10/what-is-the-confusion-matrix/
+
+DATA SCIENCE REPOSITORY(contains overall view of topics with good sources)
+https://docs.google.com/document/d/1UV6pvCi9du37cYAcKNtuj-2rkCfbt7kBJieYhSRuwHw/edit#heading=h.xuhdy8be2ruc
+Link of great MOOCS
+https://wrosinski.github.io/resources/
+
+QUANT Ques/Answers :-
+http://www.streetofwalls.com/finance-training-courses/quantitative-hedge-fund-training/quant-interview-questions-answers/
+
+DATA SCIENCE INTERVIEW QUESTIONS :-
+https://medium.com/@ArtisOne/data-science-interview-questions-statistics-4a731ec0be59
+https://www.kdnuggets.com/2020/01/data-scientist-job-dream-company.html
+
+Important
+https://towardsdatascience.com/over-100-data-scientist-interview-questions-and-answers-c5a66186769a
+https://www.springboard.com/blog/machine-learning-interview-questions/
+
+https://towardsdatascience.com/getting-data-ready-for-modelling-feature-engineering-feature-selection-dimension-reduction-77f2b9fadc0b
+https://datascience.stackexchange.com/questions/64608/k-fold-cross-validation-with-rnns
+
+https://www.kdnuggets.com/2016/02/21-data-science-interview-questions-answers.html
+https://towardsdatascience.com/11-most-common-machine-learning-algorithms-explained-in-a-nutshell-cc6e98df93be
+https://medium.com/@ArtisOne/data-science-interview-questions-statistics-4a731ec0be59
+https://elitedatascience.com/machine-learning-interview-questions-answers
+https://towardsdatascience.com/50-deep-learning-interview-questions-part-1-2-8bbc8a00ec61
+https://www.analyticsvidhya.com/blog/2020/04/comprehensive-popular-deep-learning-interview-questions-answers/
+https://elitedatascience.com/machine-learning-interview-questions-answers	
+https://towardsdatascience.com/how-i-got-4-data-science-offers-and-doubled-my-income-2-months-after-being-laid-off-b3b6d2de6938
+https://www.kdnuggets.com/2020/08/data-science-skills-superpower.html
+https://www.dezyre.com/article/100-data-science-interview-questions-and-answers-general-for-2018/184
+https://towardsdatascience.com/20-machine-learning-interview-practice-problems-3c86a572eeec
+
+Deep Learning
+https://www.analyticsvidhya.com/blog/2018/11/neural-networks-hyperparameter-tuning-regularization-deeplearning/?utm_source=blog&utm_medium=comprehensive-popular-deep-learning-interview-questions-answers
+https://www.analyticsvidhya.com/blog/2018/12/guide-convolutional-neural-network-cnn/?utm_source=blog&utm_medium=comprehensive-popular-deep-learning-interview-questions-answers
+
+https://github.com/haohanchen/Annotated-Notes-Coursera-HSE-Advanced-Machine-Learning/blob/master/Bayesian-2%20Latent%20Variable%20Models.pdf
+
+
+
+Not so important stuff
+ARIMA - https://www.youtube.com/watch?v=2XGSIlgUBDI
+BeautifulSoup tutorial in one video - https://www.youtube.com/watch?v=GjKQ6V_ViQE
+GANS - https://www.kdnuggets.com/2020/09/insiders-guide-generative-discriminative-machine-learning-models.html
+Hackerrank Statistics 10 day coding challenge - https://www.hackerrank.com/domains/tutorials/10-days-of-statistics
+
+https://www.analyticsvidhya.com/blog/2018/06/comprehensive-guide-recommendation-engine-python/?utm_source=blog&utm_medium=comprehensive-guide-k-means-clustering
+https://github.com/terenceshin/Recommendation-System/tree/master/Rec_system
+
+-------------IMP--------------
+
+https://www.analyticsvidhya.com/blog/2016/01/guide-data-exploration/
+https://machinelearningmastery.com/parametric-and-nonparametric-machine-learning-algorithms/
+https://machinelearningmastery.com/a-tour-of-machine-learning-algorithms/
+https://www.youtube.com/watch?v=7xHsRkOdVwo
+https://alexanderetz.com/2015/04/15/understanding-bayes-a-look-at-the-likelihood/
+---------------------------
+https://www.analyticsvidhya.com/blog/2020/04/feature-scaling-machine-learning-normalization-standardization/
+
+https://www.analyticsvidhya.com/blog/2016/02/time-series-forecasting-codes-python/
+https://www.analyticsvidhya.com/blog/2017/09/common-machine-learning-algorithms/?utm_source=KJlinkedin&utm_medium=post&utm_campaign=17_april_intermediate_article
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+DONE :-
+
+LSTM/GRU Video
+https://towardsdatascience.com/natural-language-processing-from-basics-to-using-rnn-and-lstm-ef6779e4ae66
+https://www.youtube.com/watch?v=9TFnjJkfqmA
+
+Weight init https://towardsdatascience.com/weight-initialization-techniques-in-neural-networks-26c649eb3b78
+
+https://www.youtube.com/watch?v=C3r7tGRe2eI DBSCAN
+
+https://machinelearningmastery.com/logistic-regression-for-machine-learning/
+https://towardsdatascience.com/logistic-regression-detailed-overview-46c4da4303bc
+https://towardsdatascience.com/understanding-logistic-regression-9b02c2aec102
+https://www.analyticsvidhya.com/blog/2017/09/common-machine-learning-algorithms/
+
+https://www.analyticsvidhya.com/blog/2017/09/naive-bayes-explained/
+https://www.kdnuggets.com/2019/11/probability-learning-naive-bayes.html
+https://www.analyticsvidhya.com/blog/2017/09/naive-bayes-explained/
+
+https://www.analyticsvidhya.com/blog/2016/11/an-introduction-to-clustering-and-different-methods-of-clustering/
+https://www.youtube.com/watch?v=4b5d3muPQmA | kmeans clustering
+https://www.analyticsvidhya.com/blog/2019/08/comprehensive-guide-k-means-clustering/
+https://towardsdatascience.com/k-means-clustering-explained-4528df86a120
+https://towardsdatascience.com/understanding-k-means-clustering-in-machine-learning-6a6e67336aa1
+https://www.analyticsvidhya.com/blog/2020/10/a-simple-explanation-of-k-means-clustering/?utm_source=linkedin&utm_medium=KJ|link|popular-article|-|5-oct?utm_source=linkedin&utm_medium=KJ|link|high-performance-blog|blogs|44081|0.625
+
+
+https://www.analyticsvidhya.com/blog/2018/03/introduction-k-neighbours-algorithm-clustering/?
+utm_source=KJlinkedin&utm_medium=post&utm_campaign=17_april_intermediate_article
+
+Decision Tree
+https://www.kdnuggets.com/2020/01/decision-tree-algorithm-explained.html
+https://towardsdatascience.com/the-complete-guide-to-decision-trees-28a4e3c7be14
+
+TREE BASED MODELS
+https://towardsdatascience.com/what-makes-lightgbm-lightning-fast-a27cf0d9785e
+https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d
+https://www.youtube.com/watch?v=Rm6s6gmLTdg&list=PLaXDtXvwY-oDvedS3f4HW0b4KxqpJ_imw&index=28
+https://www.analyticsvidhya.com/blog/2017/09/30-questions-test-tree-based-models/
+Gradient Boosting - https://www.youtube.com/watch?v=Nol1hVtLOSg
+Adaboosting - https://www.youtube.com/watch?v=NLRO1-jp5F8
+
+https://towardsdatascience.com/monte-carlo-simulations-with-python-part-1-f5627b7d60b0
+SQL joins from w3school
+
+regression tree
+https://www.youtube.com/watch?v=g9c66TUylZ4&list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF&index=40 
+LDA
+https://www.youtube.com/watch?v=azXCzI57Yfc&list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF&index=29
+
+https://www.youtube.com/c/VictorLavrenko/playlists
+https://towardsdatascience.com/gaussian-mixture-models-explained-6986aaf5a95
+EM algorithm
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+https://onehack.us/t/awesome-artificial-intelligence-ai-resources-everything-that-you-need-2/89594
+https://www.youtube.com/c/zedstatistics/playlists
+https://www.youtube.com/watch?v=i11wnCwa5R8 accenture
+
+https://www.analyticsvidhya.com/blog/2020/10/data-science-blogathon/?utm_source=linkedin&utm_medium=KJ|link|popular-article|-|5-oct?utm_source=linkedin&utm_medium=KJ|link|high-performance-blog|blogs|44081|0.625
+https://www.analyticsvidhya.com/blog/2020/10/optimizing-exploratory-data-analysis-using-functions-in-python/?utm_source=linkedin&utm_medium=KJ|link|popular-article|-|5-oct?utm_source=linkedin&utm_medium=KJ|link|high-performance-blog|blogs|44081|0.625
+

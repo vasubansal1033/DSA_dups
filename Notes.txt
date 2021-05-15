@@ -1,0 +1,166 @@
+0. PLEASE CHECK PROBLEM CONSTRAINTS!!!!!!
+
+https://www.quora.com/What-is-a-list-of-data-structures-that-a-competitive-programmer-must-know/answer/Sameer-Gulati-3?ch=10&share=dcc3b398&srid=oeMh
+https://www.quora.com/What-are-the-best-ways-to-master-dynamic-programming/answer/Sameer-Gulati-3?ch=10&share=87d550d5&srid=oeMh
+https://www.quora.com/How-can-I-be-good-at-graph-theory-based-programming-problems-in-competitive-programming/answer/Sameer-Gulati-3?ch=10&share=fed73688&srid=oeMh
+
+0. https://www.geeksforgeeks.org/malloc-vs-new/
+
+0.1 Access global declared variable e.g. int x by ::x
+
+0.10 https://developerinsider.co/what-is-dangling-pointer-with-cause-and-how-to-avoid-it/
+
+0.11 Wherever possible, try using s+=a instead of s = s+a as it doesn't create a separate copy of s due to which it is memory efficient. Also s = s+1 is equivalent to ++s not s++
+
+0.15 https://leetcode.com/problems/subarray-sum-equals-k/discuss/301242/General-summary-of-what-kind-of-problem-can-cannot-solved-by-Two-Pointers
+
+0.16 Using custom comparators with priority queues https://stackoverflow.com/questions/16111337/declaring-a-priority-queue-in-c-with-a-custom-comparator
+
+0.2 In recursion, the recursive tree gets solved in postorder fashion.
+
+0.3 struct vs class - Absolutely no difference. In class by default everything is private whereas in struct everything is public by default.
+
+0.4 https://stackoverflow.com/questions/61497061/difference-in-order-with-same-comparator-in-priority-queue-vector
+
+0.5 UnionFind datastructure
+-> quickFind - iterate to make all occurences of one's components equal to the other's component
+-> quickUnion - Make one's parent equal to the other's parent
+->  weighted quickUnion - Make the root of the smaller component equal to the root of the bigger component(note that we are changing the root, In quickUnion, we are simply making ones parent as the others). This changing the root is what brings complexity from O(n) to O(logn).
+-> Further improvement to weighted quickUnion can be done by path compression. It basically flattens out the tree, when we are finding the root of a node. 
+We can set the parent of all the nodes in the path, to the root which will need an extra root. Or we can make every other node in the path to point to its grandparent. The second option won't truly flatten out the tree but helps.
+The first option makes m union find operations on n objects as ~linear in O(n+m)
+
+0.6 https://www.geeksforgeeks.org/converting-strings-numbers-cc/
+https://www.geeksforgeeks.org/converting-string-to-number-and-vice-versa-in-c/?ref=rp
+https://www.geeksforgeeks.org/comparing-two-strings-cpp/?ref=rp
+
+0.7 https://leetcode.com/discuss/general-discussion/662866/dp-for-beginners-problems-patterns-sample-solutions
+https://leetcode.com/articles/two-pointer-technique/#
+https://leetcode.com/discuss/general-discussion/669996/greedy-for-beginners-problems-sample-solutions
+https://leetcode.com/discuss/general-discussion/698684/interview-preparation-for-beginners-ds-algorithms-os-system-design
+
+0.8 Linked list starting point of cycle algorithm proof - https://www.youtube.com/watch?v=-YiQZi3mLq0
+
+0.9 https://leetcode.com/discuss/general-discussion/665604/important-and-useful-links-from-all-over-the-leetcode
+
+0.91 Try to use integer arrays instead of unorderedmaps for hashmap implementation.  They are very fast.
+
+0.92 https://stackoverflow.com/questions/9167745/in-stdmultiset-is-there-a-function-or-algorithm-to-erase-just-one-sample-unic
+
+1. lower_bound and upper_bound work or a sorted vector(and set). lower_bound gives the first element >= given element. upper_bound gives the first element > given element.
+
+2. Iterator is like a pointer. *it will give the datastructure.
+
+3. Dynamic Programming playlist -  https://www.youtube.com/watch?v=l02UxPYRmCQ&list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go&index=2
+
+4. Don't use static variables for recursion based questions involving multiple test cases. See solution for 0-1 knapsack.
+
+5. https://leetcode.com/problems/target-sum/discuss/455024/DP-IS-EASY!-5-Steps-to-Think-Through-DP-Questions.
+
+6. Check even/odd through number & 1 ( & is bitoperator)
+
+7. Number of ways to partition a set https://www.geeksforgeeks.org/bell-numbers-number-of-ways-to-partition-a-set/
+
+8. https://www.geeksforgeeks.org/modulo-1097-1000000007/
+
+9. https://www.geeksforgeeks.org/design-a-stack-that-supports-getmin-in-o1-time-and-o1-extra-space/
+
+10. ---------------------------------------------
+a. vector<int> - Dynamic array
+
+b. pair<datatype1, datatype2> - holds a pair of datavalues(same/different) in one variable. Implemented using struct/class
+
+c. sets and maps - Binary search tree
+insertion, deletion, find - O(logn). Use when ordering in form of ascending/descending order is needed. Cannot store duplicates
+
+d. unordered set and unordered_map - hashmap(very large array and a hashfunction which generates a very large number, then we do mod size of array to get index. Incase of collision, collision handling techniques like maybe linear, quadratic probing etc. are used. Inbuilt in STL)
+insertion, deletion, find - O(1). Use when order does not matter.
+
+e. Priority queues(maxheap and minheap) - Using heap - which is a complete binary tree s.t. the root element(for subtree also) is the minimum(for minheap) and maximum element(for maxheap)
+We can only get the max/min element respectively. This the difference with sets in which the elements are maintained in sorted fashion. Also heaps can handle duplicate values unlike sets/maps.
+
+f. Queues, stack - Using linked list
+
+g. list - Doubly linked list. Use when more insertion/deletion operations are required. Traversal is slow in list. This is the difference with vectors.
+
+h. forward_list - Singly linked list.
+
+11 -----------------------------------
+General idea
+If n<=12, the time complexity can be O(n!)
+If n<=25 -> O(2^n)
+If n<=100 -> O(n^4)
+If n<=500 -> O(n^3)
+If n<=10^4 -> O(n^2)
+If n<=10^6 -> O(nlogn)
+If n<=10^8 -> O(n)
+If n>10^8 -> O(logn) or O(1)
+Using these, we can guess the algorithms
+
+12. If array is given to be sorted, then most probably Binary Search will be used.  For a sorted array, v[start]<=v[mid]<=v[last](similarly if sorted in decreasing order.)
+* For circular traversing, i.e. if index reaches end of array or start reaches beginning of array use mod operations :-
+- start = (start-1+n)%n	- start = (start+1)%n		Works for 0 indexed cases
+If sorted array is rotated say k-times towards right, true index is (i-k+n)%n	Similarly derive for otherway around.
+*** Binary search in sorted rotated arrays***
+*** lower_bound and upper_bound using Binary Search***
+
+13. Interview preparation
+https://www.youtube.com/watch?v=1PZWL3W6dpc
+
+14. Always write mid = start + (last-start)/2 as mid<= mid in decimal in this case. Dont use last+(start-last)/2 as it will give the upper value.
+e.g. start = 3, last = 4 -> mid = 3+1/2 = 3 and otherwise mid = 4 + (-1)/2 = 4!!
+
+15. When using accumulate, sum = accumulate(v.begin(), v.end(), (int/double/lli)(0 or 1)) ALWAYS TYPE CAST THE INTIAL 0 or 1 THAT IS THE THIRD ARGUMENT!!!!!! (SAME FOR SIMILAR OTHER FUNCTIONS)
+
+16. Divide and Conquer
+ https://www.geeksforgeeks.org/divide-and-conquer-algorithm-introduction/
+In both Dynamic programming and DAC, we divide the problem into subproblems and use this to get the overall solution. However, in DP there are several overlapping subproblems due to which we use memoization. But in DAC there are no overlapping subproblems.
+For e.g. Fibbonacci problem has overlapping subproblems which we calculate again and again but in Binary Search every subproblem is different(reduced form of the previous)
+
+17. https://stackoverflow.com/questions/1933759/when-is-each-sorting-algorithm-used
+Mergesort - Consists of a merge function and iterative/recursive merging of rest. 
+Merge function can be implemented using O(n) extra space or ->  inplace w/o extra space, but it's O(n2)
+
+18. https://www.geeksforgeeks.org/how-to-handle-duplicates-in-binary-search-tree/
+
+19. TREES
+
+* If 'n' nodes, then 'n-1' edges
+* Visualize a tree as collection of nodes, divided into a root node, and disjoint subsets called subtrees.
+* Degree of a  node = number of its direct children only(not descendents).
+* Degree of a tree is predecided. Cannot be told by looking at the tree. It can be greater equal to the maximum degree of a node.
+* Height of a tree - starts from 0 at root. (how many edges required to get to that node from root)
+* Level of a tree - starts from 1 at root.
+
+* Number of binary trees
+-> If nodes are unlabelled - T(n) = 2nCn/(n+1) - Catalan number
+-> Number of trees with maximum height -  2^(n-1)
+-> If nodes are labelled - T(n) = 2nCn/(n+1) * n!
+
+-> If height is given then #min. nodes = h+1. #Maximum nodes = 2^(h+1)-1
+-> If nodes are given then minimum height = log(n+1)-1 (base 2). Maximum height = n-1.
+-> # nodes deg(0) = # nodes deg(2)+1
+-> A strict binary(m-ary) tree can have nodes with degree only 0 or 2 (or m). # max nodes = (m^(h+1)-1)/(m-1). #min nodes = mh+1.
+# external nodes = (m-1)# internal nodes+1.
+-> A full binary tree of height h is a binary tree with maximum number of nodes.
+-> A complete binary if written in Level order traversal wont have any gaps between nodes. It's a full binary tree upto height h-1 and in the last level elements are filled from left to right without skipping.
+-> Time complexities of pre,in,postorder is O(n) with space complexity O(logn) (stack).
+-> Iterative postorder traversal - https://www.youtube.com/watch?v=xLQKdq0Ffjg
+-> Tree can be generated from either (Preorder and Inorder traversal) or (Postorder and Inorder traversal). If anyone is given then Catalan number(#nodes) of trees are possible.
+
+20. BSTs
+-> The inorder traversal prints the elements in increasing order.
+->  The inorder successor of the current node is the minimum element in right subtree.
+-> The inorder predecessor of the current node is the maximum element in left subtree.
+
+21. AVL trees are height controlled BSTs.
+
+22. If the graph is given to be a DAG, then think of using Topological sort.
+
+23. https://stackoverflow.com/questions/13159337/why-doesnt-dijkstras-algorithm-work-for-negative-weight-edges
+
+24. Bellman Ford uses n-1 iterations as the maximum length of minimum path between any two vertices can be n-1. In each iteration we are exploring neighbours of minimum distance node. Thus, incase of connected graph it'll take atleast n-1 iterations.
+
+25.  Prims algorithm is based on Minimum Separator lemma: If we divide the set of vertices into two groups U and V. Then the minimum cost edge joining a vertex in U and V will be present in all the MSTs.
+Proof: Let the minimum cost edge be e = (u, v). Let T be a mst not containing e. Then as it's an mst, u and v are connected through u->u'->v'->v where u', v' is the edge between U and V included in T. Now, we can simply replace u', v' edge with u, v to get a smaller cost mst. We arrive at a contradiction.
+

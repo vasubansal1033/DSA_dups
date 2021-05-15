@@ -1,0 +1,61 @@
+#include <iostream>
+using namespace std;
+
+struct Node{
+	int data;
+	Node* next;
+};
+Node* createNode(int data){
+	Node* temp = new Node();
+	temp->data = data;
+	temp->next = NULL;
+	
+	return temp;
+}
+void print(Node* head){
+	while(head!=NULL){
+		cout<<head->data<<" ";
+		head = head->next;
+	}
+	cout<<"\n";
+}
+void push(Node** head_ref, int data){
+	Node* temp = createNode(data);
+	temp->next = *head_ref;
+	*head_ref = temp;
+}
+Node* findMiddleOne(Node* head){
+	Node* slow = head;
+	Node* fast = head;
+	while(fast!=NULL && fast->next!=NULL){
+		slow = slow->next;
+		fast = fast->next->next;
+	}
+	return slow;
+}
+Node* findMiddleTwo(Node* head){
+	int c=0;
+	Node* mid = head;
+	while(head!=NULL){
+		
+		head = head->next;
+		if(c & 1){
+		 mid = mid->next;
+		}
+		c++;
+	}
+	return mid;
+}
+int main() {
+	// your code goes here
+	Node* head = createNode(10);
+	push(&head, 2);
+	push(&head, 9);
+	push(&head, 10);
+	push(&head,11);
+	// push(&head, 19);
+	print(head);
+	cout<<findMiddleOne(head)->data<<"\n";
+	cout<<findMiddleTwo(head)->data;
+	return 0;
+}

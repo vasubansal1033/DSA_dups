@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+struct Node{
+	int data;
+	Node* next;
+};
+void print(Node* head){
+	while(head!=NULL){
+		cout<<head->data<<" ";
+		head = head->next;
+	}
+}
+Node* createNode(int data){
+	Node* temp = new Node();
+	temp->data = data;
+	temp->next = NULL;
+	return temp;
+}
+void push(Node** head_ref, int data){
+	Node* temp = createNode(data);
+	temp->next = *head_ref;
+	*head_ref = temp;
+}
+void deleteNode(Node** head_ref, int data){
+	Node* temp = *head_ref;
+	
+	if(temp!=NULL && temp->data == data){
+		*head_ref = temp->next;
+		free(temp);
+		return;
+	}
+	
+	while(temp->next->data!=data && temp->next!=NULL){
+		temp = temp->next;
+	}
+	if(temp->next==NULL){
+		cout<<"Given data is not present in Linked List";
+	}
+	Node* t = temp->next;
+	temp->next = temp->next->next;
+	free(t);
+}
+int main() {
+	// your code goes here
+	Node* head = createNode(2);
+	push(&head, 5);
+	push(&head, 10);
+	
+	print(head);
+	cout<<"\n";
+	deleteNode(&head, 2);
+	print(head);
+	return 0;
+}
